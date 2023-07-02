@@ -6,10 +6,7 @@ import Button from "./Button";
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
   component: Button,
-  argTypes: {
-    textColor: { control: "color" },
-    onClick: { action: "clicked" },
-  },
+  tags: ["autodocs"],
 };
 
 export default meta;
@@ -19,16 +16,77 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    label: "Primary 😃",
-    size: "large",
-    type: "primary",
+    variant: "primary",
+    label: "Button",
+  },
+};
+export const Secondary: Story = {
+  args: {
+    label: "Button",
+  },
+};
+export const AfterIconButton: Story = {
+  args: {
+    label: "Button",
+    afterIcon: "src/assets/react.svg",
+  },
+};
+export const BeforeIconButton: Story = {
+  args: {
+    label: "Button",
+    beforeIcon: "src/assets/react.svg",
+  },
+};
+export const Small: Story = {
+  args: {
+    size: "small",
+    label: "Button",
   },
 };
 
-export const Secondary: Story = {
+export const Large: Story = {
   args: {
-    ...Primary.args,
-    type: "secondary",
-    label: "Secondary 😇",
+    size: "large",
+    label: "Button",
+  },
+};
+export const fullWidth: Story = {
+  args: {
+    size: "large",
+    label: "Button",
+    fullWidth: true,
+  },
+};
+// export const PrimaryFullWidth: Story = {
+//   args: {
+//     variant: "primary",
+//     size: "large",
+//     label: "Sign Up",
+//     fullWidth: true,
+//   },
+// };
+
+export const success: Story = {
+  args: {
+    variant: "success",
+    size: "large",
+    label: "Connected",
+    fullWidth: false,
+  },
+};
+export const danger: Story = {
+  args: {
+    variant: "danger",
+    size: "large",
+    label: "Delete Account ",
+    fullWidth: false,
+  },
+};
+export const disabled: Story = {
+  args: {
+    variant: "disabled",
+    size: "large",
+    label: "Change Password",
+    fullWidth: false,
   },
 };
